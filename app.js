@@ -629,7 +629,7 @@ var code = `
   (agent Agent_7) <~> (channel Channel_6)
 `;
 
-loadDialsCode(code);
+
 
 /*******************************************************
  * CLEAR DIAGRAM
