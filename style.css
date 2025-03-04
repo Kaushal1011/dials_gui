@@ -1,0 +1,71 @@
+/* Ensure full height for the main container */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Fix height and layout */
+.container-fluid {
+    height: 100vh; /* Make sure it occupies full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar should take full height */
+#sidebar {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Ensure the main canvas container fills remaining space */
+#canvas-container {
+    position: relative;
+    flex: 1; /* Take up all available space */
+    height: calc(100vh - 50px); /* Adjust for any navbar if needed */
+    background: #fafafa;
+    overflow: hidden;
+}
+
+/* Canvas elements must be positioned inside the container */
+.canvas-node {
+    position: absolute;
+    min-width: 100px;
+    min-height: 40px;
+    padding: 8px;
+    color: #000;
+    border: 2px solid #666;
+    border-radius: 6px;
+    background: #f3f3f3;
+    text-align: center;
+    cursor: move;
+    user-select: none;
+}
+
+/* Highlight selected nodes */
+.canvas-node.selected {
+    outline: 3px solid #ffa8a8;
+    z-index: 1000;
+}
+
+/* Connection SVG (ensures lines render properly) */
+.connection-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.connection-line {
+    stroke: #888;
+    stroke-width: 2;
+}
+
+/* Ensure output area is visible */
+#code-output-container {
+    background: #fcfcfc;
+    border-top: 1px solid #ccc;
+}
